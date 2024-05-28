@@ -7,6 +7,10 @@ import { useGestures } from '../hooks/useGestures';
 import { useImageLayout } from '../hooks/useImageLayout';
 import { useImageZoomHandle } from '../hooks/useImageZoomHandle';
 
+import { Image } from 'expo-image';
+
+const AnimatedImage = Animated.createAnimatedComponent(Image);
+
 import type { ImageZoomProps, ImageZoomRef } from '../types';
 
 const styles = StyleSheet.create({
@@ -70,10 +74,10 @@ const ImageZoom: ForwardRefRenderFunction<ImageZoomRef, ImageZoomProps> = (
 
   return (
     <GestureDetector gesture={gestures}>
-      <Animated.Image
+      <AnimatedImage
         style={[styles.image, style, animatedStyle]}
         source={{ uri }}
-        resizeMode="contain"
+        contentFit="contain"
         onLayout={onImageLayout}
         {...props}
       />

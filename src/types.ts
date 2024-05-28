@@ -1,8 +1,6 @@
-import type {
-  ImageProps,
-  ImageSourcePropType,
-  LayoutRectangle,
-} from 'react-native';
+import type { ImageSourcePropType, LayoutRectangle } from 'react-native';
+import type { ImageProps } from 'expo-image';
+
 import type {
   GestureStateChangeEvent,
   PanGestureHandlerEventPayload,
